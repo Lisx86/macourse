@@ -1,0 +1,229 @@
+--format=gnu -f- -b20 --quoting-style=escape --rmt-command=/etc/rmt
+--rsh-command=/usr/bin/ssh
+[grim@localhost macourse]$ 
+[grim@localhost macourse]$ 
+[grim@localhost macourse]$ 
+[grim@localhost macourse]$ 
+[grim@localhost macourse]$ 
+[grim@localhost macourse]$ ll
+total 20
+-rw-rw-r--. 1 grim grim    74 Apr 19 05:39 main.cpp
+-rw-rw-r--. 1 grim grim    11 Apr 19 05:09 README.md
+-rw-rw-r--. 1 grim grim 10240 Apr 19 05:54 test.txt
+[grim@localhost macourse]$ tar -cf archive.tar test.txt 
+[grim@localhost macourse]$ ll
+total 40
+-rw-rw-r--. 1 grim grim 20480 Apr 19 05:54 archive.tar
+-rw-rw-r--. 1 grim grim    74 Apr 19 05:39 main.cpp
+-rw-rw-r--. 1 grim grim    11 Apr 19 05:09 README.md
+-rw-rw-r--. 1 grim grim 10240 Apr 19 05:54 test.txt
+[grim@localhost macourse]$ 
+[grim@localhost macourse]$ 
+[grim@localhost macourse]$ 
+[grim@localhost macourse]$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	archive.tar
+	main.cpp
+	test.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+[grim@localhost macourse]$ git add main.cpp
+[grim@localhost macourse]$ git commit main.cpp
+[master 7eb456a] hello code
+ Committer: Grim <grim@localhost.localdomain>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 6 insertions(+)
+ create mode 100644 main.cpp
+[grim@localhost macourse]$ 
+[grim@localhost macourse]$ 
+[grim@localhost macourse]$ 
+[grim@localhost macourse]$ 
+[grim@localhost macourse]$ tig
+[grim@localhost macourse]$ 
+[grim@localhost macourse]$ 
+[grim@localhost macourse]$ vim main.cpp 
+bash: vim: command not found...
+
+^C[grim@localhost macourse]$ vi main.cpp 
+[grim@localhost macourse]$ 
+[grim@localhost macourse]$ 
+[grim@localhost macourse]$ 
+[grim@localhost macourse]$ g++ main.cpp 
+[grim@localhost macourse]$ size
+   text	   data	    bss	    dec	    hex	filename
+   2075	    628	    280	   2983	    ba7	a.out
+[grim@localhost macourse]$ ll
+total 64
+-rwxrwxr-x. 1 grim grim 22672 Apr 19 06:03 a.out
+-rw-rw-r--. 1 grim grim 20480 Apr 19 05:54 archive.tar
+-rw-rw-r--. 1 grim grim   156 Apr 19 06:03 main.cpp
+-rw-rw-r--. 1 grim grim    11 Apr 19 05:09 README.md
+-rw-rw-r--. 1 grim grim 10240 Apr 19 05:54 test.txt
+[grim@localhost macourse]$ size a.out 
+   text	   data	    bss	    dec	    hex	filename
+   2075	    628	    280	   2983	    ba7	a.out
+[grim@localhost macourse]$ vi main.cpp 
+[grim@localhost macourse]$ 
+[grim@localhost macourse]$ 
+[grim@localhost macourse]$ 
+[grim@localhost macourse]$ 
+[grim@localhost macourse]$ git statu
+git: 'statu' is not a git command. See 'git --help'.
+
+The most similar commands are
+	status
+	stage
+	stash
+[grim@localhost macourse]$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   main.cpp
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	a.out
+	archive.tar
+	test.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[grim@localhost macourse]$ git diff main.cpp
+diff --git a/main.cpp b/main.cpp
+index d189681..8c2e876 100644
+--- a/main.cpp
++++ b/main.cpp
+@@ -1,6 +1,6 @@
+ #include <iostream>
+ using namespace std;
+ int main() {
+-   
++   cout << "uraaaar temeperi ia magu programirovati v linuhe!!!! iuhhuuuu!@" << endl;
+    return 42;
+ }
+[grim@localhost macourse]$ vi main.cpp 
+[grim@localhost macourse]$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   main.cpp
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	a.out
+	archive.tar
+	test.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[grim@localhost macourse]$ vi main.cpp 
+[grim@localhost macourse]$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   main.cpp
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	a.out
+	archive.tar
+	test.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[grim@localhost macourse]$ git diff main.cpp
+diff --git a/main.cpp b/main.cpp
+index d189681..f327890 100644
+--- a/main.cpp
++++ b/main.cpp
+@@ -1,6 +1,6 @@
+ #include <iostream>
+ using namespace std;
+ int main() {
+-   
++   cout << "uraaaar temeperi ia magu programirovati v linuhe!!!! iuhhuuuu!" << endl;
+    return 42;
+ }
+[grim@localhost macourse]$ vi main.cpp 
+[grim@localhost macourse]$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   main.cpp
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	a.out
+	archive.tar
+	test.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[grim@localhost macourse]$ git add main.cpp 
+[grim@localhost macourse]$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   main.cpp
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	a.out
+	archive.tar
+	test.txt
+
+[grim@localhost macourse]$ tig
+[grim@localhost macourse]$ git commit main.cpp 
+[master c062b7d] ia prosto dovagil odus sosdowowo
+ Committer: Grim <grim@localhost.localdomain>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[grim@localhost macourse]$ tig
+[grim@localhost macourse]$ 
+[grim@localhost macourse]$ 
+[grim@localhost macourse]$ 
+[grim@localhost macourse]$ 
+[grim@localhost macourse]$ tig
+[grim@localhost macourse]$ 
+
